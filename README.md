@@ -17,7 +17,7 @@ Our reverse vending machine uses AI-powered computer vision and a load cell to s
 8) ```hx711.py``` includes the weight sensor class for Raspberry Pi 4 functionality. 
 9) ```model.tflite``` includes the TFLite deep learning model. 
 10) ```labels.txt``` includes the labels of the types of containers our machine classifies (large_plastic, large_carton, small_plastic, small_carton, metal).
-11) ```test``` is a folder containing useful scripts for debugging and checking individual parts of the machine: ```motor_check.py: ```, ```weight_sensor_check.py: ```, ``` take_photo.py: ```, ```check_ai.py```
+11) ```test``` is a folder containing useful scripts for debugging and checking individual parts of the machine (```motor_check.py: ```, ```weight_sensor_check.py ```, ``` take_photo.py: ```, ```check_ai.py```).
 
 ## How to reproduce it
 ### Dataset
