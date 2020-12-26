@@ -6,16 +6,18 @@ Our aim is to build a compact, cost-effective, and fraud-resistant reverse vendi
 Our reverse vending machine uses AI-powered computer vision and a load cell to sort the containers. The computer vision algorithm classifies the containers into three categories (metal, plastic and carton) and the load cell checks whether they contain liquid or not. After accepting the containers, the machine transfers money to the user’s card.
 
 ## Files contained
-1) ```main_main_flow.py``` includes the main functionality of the machine (classification, weight_check, storage, GUI)
-2) ```main_main_flow.sh``` inclues the shell script for custom machine functionality
-2) ```ai.py``` includes the code for training image classification network and downloading TFLite file for Raspberry Pi 4 Module.
-3) ```ai_train.sh``` includes a modifiable shell script for custom training
-4) ```ai_train_notebook.ipynb``` includes a google colab/jupyter notebook for interactive ai training
-5) ```dataset``` includes the dataset images for all classes 
-6) ```motor.py``` includes the motor class for Rasberry Pi 4 functionality
-7) ```hx711.py``` includes the weight sensor class for Raspberry Pi 4 functionality. 
-8) ```model.tflite``` includes the TFLite deep learning model 
-9) ```labels.txt``` includes the labels of the types of containers our machine classifies (large_plastic, large_carton, small_plastic, small_carton, metal)
+1) ```main_main_flow.py``` includes the main functionality of the machine (classification, weight_check, storage, GUI).
+2) ```main_main_flow.sh``` inclues the shell script for custom machine functionality.
+3) ```ai.py``` includes the code for training image classification network and downloading TFLite file for Raspberry Pi 4 Module.
+4) ```ai_train.sh``` includes a modifiable shell script for custom training.
+5) ```ai_train_notebook.ipynb``` includes a google colab notebook for interactive ai training.
+6) ```rasp_classify.py``` includes the functions to classify containers using PiCamera and AI.
+6) ```dataset``` includes the dataset images for all classes.
+7) ```motor.py``` includes the motor class for Rasberry Pi 4 functionality.
+8) ```hx711.py``` includes the weight sensor class for Raspberry Pi 4 functionality. 
+9) ```model.tflite``` includes the TFLite deep learning model. 
+10) ```labels.txt``` includes the labels of the types of containers our machine classifies (large_plastic, large_carton, small_plastic, small_carton, metal).
+11) ```test``` is a folder containing useful scripts for debugging and checking individual parts of the machine: ```motor_check.py: ```, ```weight_sensor_check.py: ```, ``` take_photo.py: ```, ```check_ai.py```
 
 ## How to reproduce it
 ### Dataset
