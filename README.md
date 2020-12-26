@@ -12,7 +12,7 @@ Our reverse vending machine uses AI-powered computer vision and a load cell to s
 4) ```ai_train.sh``` includes a modifiable shell script for custom training.
 5) ```ai_train_notebook.ipynb``` includes a google colab notebook for interactive ai training.
 6) ```rasp_classify.py``` includes the functions to classify containers using PiCamera and AI.
-6) ```dataset``` includes the dataset images for all classes.
+6) ```dataset``` is a folder that includes the dataset images used for training and testing.
 7) ```motor.py``` includes the motor class for Rasberry Pi 4 functionality.
 8) ```hx711.py``` includes the weight sensor class for Raspberry Pi 4 functionality. 
 9) ```model.tflite``` includes the TFLite deep learning model. 
