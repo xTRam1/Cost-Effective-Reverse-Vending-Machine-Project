@@ -1,0 +1,5 @@
+large_carton
+large_plastic
+metal
+small_carton
+small_plastic

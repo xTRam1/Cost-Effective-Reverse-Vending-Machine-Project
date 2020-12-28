@@ -1,0 +1,21 @@
+python3 main_main_flow.py --labels_file "labels.txt" \
+--model_file "model.tflite" \
+--min_prob 0.7 \
+--weight_sensor_pins 6 5 \
+--weight_sensor_reference_unit 430 \
+--num_weight 5 \
+--weight_map large_plastic=24 small_plastic=19 large_carton=41 small_carton=10 metal=12 \
+--weight_uncertainty_map large_plastic=3 small_plastic=11 large_carton=3 small_carton=2 metal=4 \
+--motorT_pins 18 24 23 \
+--motor1_pins 26 19 13 \
+--motor2_pins 16 20 21 \
+--lamp_pins 22 27 17 \
+--motor1_time_forward 0.25 \
+--motor2_time_forward 0.25 \
+--motor1_time_backward 0.35 \
+--motor2_time_backward 0.35 \
+--motorT_time 0.25 \
+--motorT_speed forward=100 backward=80 \
+--motor1_speed forward=60 backward=90 \
+--motor2_speed forward=60 backward=90 \
+--price_map large_plastic=0.25 small_plastic=0.15 large_carton=0.15 small_carton=0.05 metal=0.30
