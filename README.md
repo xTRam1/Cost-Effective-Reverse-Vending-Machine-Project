@@ -6,18 +6,23 @@ Our aim is to build a compact, cost-effective, and fraud-resistant reverse vendi
 Our reverse vending machine uses AI-powered computer vision and a load cell to sort the containers. The computer vision algorithm classifies the containers into three categories (metal, plastic and carton) and the load cell checks whether they contain liquid or not. After accepting the containers, the machine transfers money to the user’s card.
 
 ## Files contained
-1) ```main_main_flow.py``` includes the main functionality of the machine (classification, weight_check, storage, GUI).
-2) ```main_main_flow.sh``` inclues the shell script for custom machine functionality.
-3) ```ai.py``` includes the code for training image classification network and downloading TFLite file for Raspberry Pi 4 Module.
-4) ```ai_train.sh``` includes a modifiable shell script for custom training.
-5) ```ai_train_notebook.ipynb``` includes a google colab notebook for interactive ai training.
-6) ```rasp_classify.py``` includes the functions to classify containers using PiCamera and AI.
-6) ```dataset``` is a folder that includes the dataset images used for training and testing.
-7) ```motor.py``` includes the motor class for Rasberry Pi 4 functionality.
-8) ```hx711.py``` includes the weight sensor class for Raspberry Pi 4 functionality. 
-9) ```model.tflite``` includes the TFLite deep learning model. 
-10) ```labels.txt``` includes the labels of the types of containers our machine classifies (large_plastic, large_carton, small_plastic, small_carton, metal).
-11) ```test``` is a folder containing useful scripts for debugging and checking individual parts of the machine (```motor_check.py ```, ```weight_sensor_check.py ```, ``` take_photo.py ```, ```check_ai.py```).
+1) ```ai_training``` is the folder of files for training the AI model. 
+    * ```AI_training.ipynb``` is the Google Colab notebook for custom training.
+    * ```ai.py``` is the main training file.
+    * ```ai_train.sh``` is the shell script for training the AI model from command line.
+2) ```debug``` is the folder for debugging the individual parts of the project.
+    * ```check_ai.py``` checks the AI model.
+    * ```motor.py``` is the class for motors.
+    * ```motor_check.py``` checks the motors.
+    * ```take_photo.py``` takes photo from PiCamera.
+    * ```weight_sensor_check.py``` checks the weight sensor.
+3) ```hx711.py``` is the class for the weight sensor for Raspberry Pi 4.
+4) ```labels.txt``` includes the labels of the types of containers our machine classifies (large_plastic, large_carton, small_plastic, small_carton, metal).
+5) ```main_main_flow.py``` includes the main functionality of the machine (classification, weight_check, storage, GUI).
+6) ```main_main_flow.sh``` inclues the shell script for custom machine functionality.
+7) ```model.tflite``` includes the TFLite deep learning model. 
+8) ```motor.py``` is the class for motors.
+9) ```rasp_classify.py``` includes the functions to classify containers using PiCamera and AI.
 
 ## How to reproduce it
 ### Dataset
