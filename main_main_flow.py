@@ -16,8 +16,9 @@ import argparse
 from tkinter import *
 import RPi.GPIO as GPIO
 
+total_price = 0.00
+
 def main_flow(args, hx, motorT, motor1, motor2, labels, interpreter, lamp):
-    total_price = 0.0
     LARGEFONT =("Verdana", 20)
 
     root = Tk()
@@ -32,7 +33,7 @@ def main_flow(args, hx, motorT, motor1, motor2, labels, interpreter, lamp):
     recycle_button.grid(row=1, column=1)
     result_label = Label(recycle_frame, font=('Verdana', 20), text="", padx=5, pady=5, fg="#6CBA6D")
     result_label.grid(row=2, column=1)
-    recycle_label = Label(recycle_frame, font=LARGEFONT, text="Recycle Count: " + str(total_price) + " TL", padx=25, pady=25, fg="#6CBA6D")
+    recycle_label = Label(recycle_frame, font=LARGEFONT, text="Recycle Count: " + "{:.2f}".format(total_price) + " TL", padx=25, pady=25, fg="#6CBA6D")
     recycle_label.grid(row=3, column=1)
 
     # Dial_frame
@@ -100,9 +101,11 @@ def recycle_flow(args, hx, motorT, motor1, motor2, total_price, result_label, re
         return 
 
     move_motors(args, object_name, motorT, motor1, motor2)
-    total_price += float(args.price_map[object_name])
+    
+    global total_price
+    total_price = total_price + float(args.price_map[object_name])
     result_label['text'] = 'Accepted'
-    recycle_label['text'] = "Recycle Count: " + str(total_price) + " TL"
+    recycle_label['text'] = "Recycle Count: " + "{:.2f}".format(total_price) + " TL"
     return 
 
 def move_motors(args, object_name, motorT, motor1, motor2):
@@ -151,7 +154,7 @@ def ok(total_price, transaction_label, dial_screen, result_label, recycle_label)
 	dial_screen['text'] = ''
 	transaction_label['text'] = "Transaction Completed. Thank you."
 	total_price = 0.0
-	recycle_label['text'] = "Rcycle Count: " + str(total_price) + " TL"
+	recycle_label['text'] = "Rcycle Count: " + "{:.2f}".format(total_price) + " TL"
 
 def remove(dial_screen):
     dial_screen['text'] = dial_screen['text'][:-1]
