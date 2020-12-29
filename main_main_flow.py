@@ -29,7 +29,7 @@ def main_flow(args, hx, motorT, motor1, motor2, labels, interpreter, lamp):
     recycle_frame.grid(row=0, column=0)
     recycle_header = Label(recycle_frame, font=LARGEFONT, text="Tap the Recycle button \n when you have placed your \n container into the machine", padx=25, pady=25, fg="#6CBA6D")      
     recycle_header.grid(row=0, column=0, columnspan=3)
-    recycle_button = Button(recycle_frame, font=LARGEFONT, text="Recycle", command=lambda: recycle_flow(args, hx, motorT, motor1, motor2, total_price, result_label, recycle_label, interpreter, labels, lamp), padx=25, pady=25, bg="#6CBA6D", fg="#FFFFFF") 
+    recycle_button = Button(recycle_frame, font=LARGEFONT, text="Recycle", command=lambda: recycle_flow(args, hx, motorT, motor1, motor2, total_price, result_label, recycle_label, interpreter, labels, lamp, transaction_label), padx=25, pady=25, bg="#6CBA6D", fg="#FFFFFF") 
     recycle_button.grid(row=1, column=1)
     result_label = Label(recycle_frame, font=('Verdana', 20), text="", padx=5, pady=5, fg="#6CBA6D")
     result_label.grid(row=2, column=1)
@@ -86,10 +86,11 @@ def dial(number, transaction_label, dial_screen):
 	transaction_label['text'] = ''
 	dial_screen['text'] = dial_screen['text'] + number
 
-def recycle_flow(args, hx, motorT, motor1, motor2, total_price, result_label, recycle_label, interpreter, labels, lamp):    
+def recycle_flow(args, hx, motorT, motor1, motor2, total_price, result_label, recycle_label, interpreter, labels, lamp, transaction_label):    
     """
     Main recycle function. Does the classification, weight check, and seperator movement.
     """
+    transaction_label['text'] = ''
     object_name = classify(args, labels, interpreter, lamp)
     if object_name == None:
         result_label['text'] = "Rejected"
