@@ -5,7 +5,7 @@ Our aim is to build a compact, cost-effective, and fraud-resistant reverse vendi
 
 Our reverse vending machine uses AI-powered computer vision and a load cell to sort the containers. The computer vision algorithm classifies the containers into three categories (metal, plastic and carton) and the load cell checks whether they contain liquid or not. After accepting the containers, the machine transfers money to the user’s card.
 
-YouTube video link to see the machine setup: 
+YouTube video link: https://youtu.be/w6POGiyXDMc 
 
 ## Files contained
 1) ```ai_training``` is the folder of files for training the AI model. 
