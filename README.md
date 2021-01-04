@@ -52,19 +52,19 @@ You can  either modify the paraneters in ```ai_train.sh``` for your own project 
 ```sh
 $ bash ai_train.sh
 ```
-After training you will have ```model.tflite``` and ```labels.txt``` files which are customized for your own training. Again, if you don't want custom training, you can just use the files we have provided here. 
+After training you will have ```model.tflite``` and ```labels.txt``` files which are customized for your own training. Again, if you don't want custom training, you can just use the files we have provided here. In order to test the accuracy of your model as well as see the images that your model makes a mistake at (useful in diagnosing problems with the model or the dataset such as the model's inability to classify one of the brand's plastic bottle in the dataset) use this command:
+```sh
+$ python3 ai_training/test.py --labels_file "labels.txt" \
+--model_file "model.tflite" \
+--dataset_path "dataset"  # Assuming these are the path to your labels, model, and dataset 
+```
 
-### Debugging
-You must be sure that every component of the machine works correctly by using the debugging scripts inside the ```debug``` folder. The motors, the load cell, AI, and the camera, all have their own debugging scripts. Be sure to specify the arguments when running the programs on the command line. 
-Here is an example for checking the accuracy of your AI:
-```
-git clone https://github.com/xTRam1/Cost-Effective-Reverse-Vending-Machine-Project # Copying this repository
-python3 debug/check_ai.py
-```
 
 ### Raspberry Pi 4
-Transfer all of your files into your Raspberry Pi 4. You must modify the parameters in ```main_main_flow.sh``` for the motors' and the weight sensor's GPIO pins and also the path to your project folder. After that, you can simply run  this command line and there you have yourself your own machine!! 
+Transfer all of your AI training files into your Raspberry Pi 4 (Be sure to clone this repository into your Raspberry Pi 4 if you still haven't done so, and replace the model.tflite and labels.txt files with your own ones. If you haven't trained your own AI, you can simply use our project's). 
+After assembling your machine, you must start debugging it. You must be sure that every component of the machine works correctly by using the debugging scripts inside the ```debug``` folder. The motors (```motor_check.py```), the load cell (```weight_sensor_check.py```), AI (```check_ai.py```), and the camera (```take_photo.py```), all have their own debugging scripts. Be sure to specify the arguments when running the programs on the command line. 
+Then, you can simply modify the parameters in ```main_main_flow.sh``` for the motors' and the weight sensor's GPIO pins and also the path to your project folder, and run  this command line and there you have yourself your own machine!! 
 ```sh
 $ bash main_main_flow.sh
 ```
-What's left to do is to assemble the mechanical pieces and you're done:) Save your environment! Promote recycling... for a better future!!
+What's left to do is to use your machine in your local subway, school, supermarket... Save your environment! Promote recycling... for a better future!!
