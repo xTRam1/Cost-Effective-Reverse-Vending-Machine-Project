@@ -26,6 +26,13 @@ YouTube video link: https://youtu.be/w6POGiyXDMc
 8) ```motor.py``` is the class for motors.
 9) ```rasp_classify.py``` includes the functions to classify containers using PiCamera and AI.
 
+## Setup Requirements
+1) 5kg Load Cell + HX711 Amplifier
+2) Raspberry Pi Camera Module
+3) Raspberry Pi 7" Touch Screen Display
+4) 3 DC motors
+5) 2 L298N Motor Driver Board
+
 ## How to reproduce it
 ### Dataset
 You can either use our dataset provided here or construct your own one. In order to construct one, you just need to take images of the classes of containers you would like your machine to classify and place each image into their respective class folders: (an example is shown below)
@@ -46,6 +53,9 @@ You can  either modify the paraneters in ```ai_train.sh``` for your own project 
 $ bash ai_train.sh
 ```
 After training you will have ```model.tflite``` and ```labels.txt``` files which are customized for your own training. Again, if you don't want custom training, you can just use the files we have provided here. 
+
+### Debugging
+You must be sure that every component of the machine works correctly by using the debugging scripts inside the ```debug``` folder. The motors, the load cell, AI, and the camera, all have their own debugging scripts. Be sure to specify the arguments when running the programs on the command line. 
 
 ### Raspberry Pi 4
 Transfer all of your files into your Raspberry Pi 4. You must modify the parameters in ```main_main_flow.sh``` for the motors' and the weight sensor's GPIO pins and also the path to your project folder. After that, you can simply run  this command line and there you have yourself your own machine!! 
