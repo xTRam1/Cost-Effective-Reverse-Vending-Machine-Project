@@ -56,6 +56,11 @@ After training you will have ```model.tflite``` and ```labels.txt``` files which
 
 ### Debugging
 You must be sure that every component of the machine works correctly by using the debugging scripts inside the ```debug``` folder. The motors, the load cell, AI, and the camera, all have their own debugging scripts. Be sure to specify the arguments when running the programs on the command line. 
+Here is an example for checking the accuracy of your AI:
+```
+git clone https://github.com/xTRam1/Cost-Effective-Reverse-Vending-Machine-Project # Copying this repository
+python3 debug/check_ai.py
+```
 
 ### Raspberry Pi 4
 Transfer all of your files into your Raspberry Pi 4. You must modify the parameters in ```main_main_flow.sh``` for the motors' and the weight sensor's GPIO pins and also the path to your project folder. After that, you can simply run  this command line and there you have yourself your own machine!! 
